@@ -16,7 +16,7 @@ import java.util.Collections;
  * @param <T> the type of object stored in the list.
  *
  * @author Hugh Osborne
- * @version November 2020
+ * @version October 2020
  */
 public class SingleLinkList<T> extends BasicList<SingleLinkNode<T>,T> implements List<T> {
 
