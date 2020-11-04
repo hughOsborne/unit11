@@ -9,9 +9,9 @@ import java.util.Collections;
 
 /**
  * A partial implementation of the List interface.
- * This implementation only implements the T get(int index) and SingleLinkList<T> formArray(T[] array) methods,
+ * This implementation only fully implements the {@link #get(int index)} and {@link #fromArray(Object[])} methods,
  * and the class must, therefore be declared abstract.
- * You should implement the remaining missing methods, so as to be able to make the class no longer abstract.
+ * Only stubs are provided for the remaining methods.
  *
  * @param <T> the type of object stored in the list.
  *
@@ -36,6 +36,7 @@ public class SingleLinkList<T> extends BasicList<SingleLinkNode<T>,T> implements
      * A helper method to access a node at a specified index.
      *
      * @param index the index of the node to be accessed.
+     * @return the node at the given index.
      * @throws ListAccessError if there is no node with the given index.
      */
     ListNode<T> getNode(int index) throws ListAccessError {

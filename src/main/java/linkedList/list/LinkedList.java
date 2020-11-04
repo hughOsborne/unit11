@@ -35,6 +35,8 @@ public interface LinkedList<N extends ListNode<T>,T>
 
     /**
      * Create an array equivalent to this list - i.e. with exactly the same elements in the same order.
+     * @param cl the class of object in the list.
+     * @return an array containing the same elements as this list, in the same order as in the list.
      */
     public T[] toArray(Class<? extends T> cl);
 
@@ -42,6 +44,14 @@ public interface LinkedList<N extends ListNode<T>,T>
      * Populate this list from an array.  If the list is currently empty, the populated list will be
      * equivalent to the array - it will contain exactly the same elements in the same order.  If the list is
      * not initially empty the original elements of the list will appear after the copy of the array.
+     * @param array the array of values to be added to the list.
+     * @return this list, but now with the values from the array prepended to the list in the order in which they
+     * appear in the array.
+     * @throws ListAccessError <i>Shouldn't happen</i>.
+     * The method has to be defined to possibly throw a ListAccessError as the methods defined in implementing
+     * classes to add entries to the list have to be defined to throw this exception if they are misused.
+     * Proper implementations of fromArray should, of course, <i>not</i> misuse these methods, so this exception
+     * should never be thrown here.
      */
     public LinkedList<N,T> fromArray(T[] array) throws ListAccessError;
 }
